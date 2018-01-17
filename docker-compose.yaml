@@ -1,0 +1,24 @@
+version: '2'
+services:
+  nginx:
+    build: nginx
+    container_name: nginx
+    ports: 
+      - 8080:80
+      - 443:443
+    volumes: 
+      - ./tmp/docker:/usr/share/nginx/html
+  php-fpm:
+    image: nanoninja/php-fpm
+    container_name: php-fpm
+    volumes:
+      - ./tmp/docker:/usr/share/nginx/html
+  db:
+    container_name: mysql
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_DATABASE=test
+        MYSQL_ROOT_PASSWORD=test
+        MYSQL_USER=test
+        MYSQL_PASSWORD=test
