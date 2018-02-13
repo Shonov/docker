@@ -1,18 +1,21 @@
 version: '2'
 services:
+
   nginx:
     build: nginx
     container_name: nginx
     ports: 
-      - 8080:80
+      - 80:80
       - 443:443
     volumes: 
-      - ./tmp/docker:/usr/share/nginx/html
+      - ./:/usr/share/nginx/html
+
   php-fpm:
     image: nanoninja/php-fpm
     container_name: php-fpm
     volumes:
-      - ./tmp/docker:/usr/share/nginx/html
+      - ./:/usr/share/nginx/html
+
   db:
     container_name: mysql
     image: mysql
@@ -22,3 +25,17 @@ services:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_USER=test
       - MYSQL_PASSWORD=test
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    ports:
+      - 8080:80
+
+  frontend:
+    build: ./
+    container_name: frontend
+    volumes:
+      - ./:/usr/share/frontend

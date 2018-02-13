@@ -1,0 +1,24 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "creating first project with docker",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "fancybox": "^3.0.0",
+    "sass.js": "^0.10.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shonov/docker.git"
+  },
+  "author": "Vitaly Shonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shonov/docker/issues"
+  },
+  "homepage": "https://github.com/Shonov/docker#readme"
+}
