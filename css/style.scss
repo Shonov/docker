@@ -1,3 +1,7 @@
+$color_value: #586667;
+$size_text: 20px;
+$small_size_text: 14px;
+$type_text: ArialMT;
 #main {
   width:1140px;
   margin:0 auto;
@@ -17,8 +21,8 @@
   #image {
     p, h1{
       padding-left: 50px;
-      font-size: 20px;
-      color: #586667;
+      font-size: $size_text;
+      color: $color_value;
       letter-spacing: 0;
     }
 
@@ -38,13 +42,15 @@
     border: 2px solid #D55917;
     width: 284px;
     height: 64px;
+    
     span, p {
       display: inline-block;
-      font-family: ArialMT;
-      font-size: 20px;
+      font-family: $type_text;
+      font-size: $size_text;
       color: #D55917;
       letter-spacing: 0;
     }
+    
     span {
       z-index: 2;
       padding-left: 30px;
@@ -55,22 +61,25 @@
 
 #collection {
   h4{
-    color: #586667;
-    font-family: ArialMT;
+    color: $color_value;
+    font-family: $type_text;
     padding-left: 0;
     font-size: 36px;
     font-weight: normal;
     text-align: center;
   }
+
   img {
     display: block;
     margin: 0 auto;
     width: 170px;
     height: 170px;
   }
+
   .hidden {
     display: none;
   }
+
   div.product{
     border: 1px solid white;
     float: left;
@@ -97,6 +106,7 @@
   width: 773px;
   height: 500px;
 }
+
 #shadow {
   position: fixed;
   z-index: 10;
@@ -105,34 +115,36 @@
   border-right: 200px solid transparent;
   width: 573px;
 }
+
 li {
   list-style-type: none;
   padding-top: 5px;
 }
+
 ul {
   padding-left: 10px;
 }
 
-#action{
-  padding-left: 15px;
-  font-family: ArialMT;
-  font-size: 14px;
-  color: #D55917;
-  letter-spacing: 0;
-}
-.shoes {
-  font-family: ArialMT;
-  font-size: 14px;
-  color: #A4A4A4;
-  letter-spacing: 0;
-}
-.firm{
-  font-family: ArialMT;
-  font-size: 14px;
-  color: #363636;
+#action, .shoes, .firm {
+  font-family: $type_text;
+  font-size: $small_size_text;
   letter-spacing: 0;
 }
 
+#action{
+  padding-left: 15px;
+  color: #D55917;
+}
+
+.shoes {
+  color: #A4A4A4;
+  letter-spacing: 0;
+}
+
+.firm{
+  color: #363636;
+  letter-spacing: 0;
+}
 
 .a_modal{
   display: none;
@@ -147,8 +159,8 @@ ul {
 
 .open_modal{
   text-decoration: none;
-  font-family: ArialMT;
-  font-size: 14px;
+  font-family: $type_text;
+  font-size: $small_size_text;
   color: #6B6B6B;
   letter-spacing: 0;
 }
