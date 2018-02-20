@@ -1,38 +1,36 @@
-<?php
-require_once "php/main.php";
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Верстка</title>
 	<meta charset="utf-8">
-<!--	<link rel='stylesheet' href='css/style.css' />-->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/build/css/style-b1d75db94c.css">
+    <!-- endinject -->
 </head>
 
 <body>
-<div id="main"> 
+<div id="main">
 
 	<div id="background">
 			<div id="opacity_background">
 				<div id="image">
 					<h1>ОСЕНЬ 2016</h1>
 					<p id="title">Новая коллекция обуви ОСЕНЬ-ЗИМА 2016</p>
-					<p>Ничто не вызывает у девушек столько восторга, как покупка <br> новой обуви. А если она еще и соответствует модным тенденциям <b>осени-зимы 2016-2017</b> - в таком случае владелица обновки в прямом смысле срывает двойной куш.</p>			
-				</div>	
+					<p>Ничто не вызывает у девушек столько восторга, как покупка <br> новой обуви. А если она еще и соответствует модным тенденциям <b>осени-зимы 2016-2017</b> - в таком случае владелица обновки в прямом смысле срывает двойной куш.</p>
+				</div>
 
 				<div class="button">
 					<span> ▶ </span>
 					<p>Просмотреть показ</p>
 				</div>
-			</div>	
+			</div>
 			<div id="shadow"></div>
 	</div>
- 
+
 	<div id="collection">
-		<h4>Осенняя коллекция</h4>	
+		<h4>Осенняя коллекция</h4>
 		<div class="product">
-			<img src="./css/images/Bitmapprod_1.jpg"> 
+			<img src="../css/images/Bitmapprod_1.jpg">
 			<ul>
 				<li>2 400 руб.</li>
 				<li class="firm">Beppi / <span class="shoes">Ботинки</span></li>
@@ -42,17 +40,17 @@ require_once "php/main.php";
 			</div>
 		</div>
 
-		<div id="modal1" class="modal_div" style="display: none;">  
+		<div id="modal1" class="modal_div" style="display: none;">
 			<span class="modal_close">X</span>
-			<img src="./css/images/Bitmapprod_1.jpg" class="modal_image"> 
+			<img src="../css/images/Bitmapprod_1.jpg" class="modal_image">
 			<ul>
 				<li>Стоимость: 2 400 руб.</li>
 				<li class="firm">Фирма Beppi / <span class="shoes">Ботинки</span></li>
 			</ul>
 		</div>
-		
+
 		<div class="product">
-			<img src="./css/images/Bitmap.jpg">
+			<img src="../css/images/Bitmap.jpg">
 			<ul>
 				<li>5 600 руб.</li>
 				<li class="firm">Adidas Perfo / <span class="shoes">Ботинки</span></li>
@@ -62,37 +60,37 @@ require_once "php/main.php";
 			</div>
 		</div>
 
-		<div id="modal2" class="modal_div" style="display: none;">  
+		<div id="modal2" class="modal_div" style="display: none;">
 			<span class="modal_close">X</span>
-			<img src="./css/images/Bitmap.jpg">
+			<img src="../css/images/Bitmap.jpg">
 				<ul>
 				<li>Стоимость: 5 600 руб.</li>
 				<li class="firm">Adidas Perfo / <span class="shoes">Ботинки</span></li>
 			</ul>
 		</div>
-	
+
 		<div class="product">
-			<img src="./css/images/Bitmap.jpg">
+			<img src="../css/images/Bitmap.jpg">
 			<ul>
 				<li>2 700 руб.</li>
 				<li class="firm">S-tep / <span class="shoes">Ботинки</span></li>
 			</ul>
 			<div class="a_modal">
-				<a href="#modal3" class="open_modal">Подробнее</a>				
+				<a href="#modal3" class="open_modal">Подробнее</a>
 			</div>
 		</div>
-		
-		<div id="modal3" class="modal_div" style="display: none;">  
+
+		<div id="modal3" class="modal_div" style="display: none;">
 			<span class="modal_close">X</span>
-			<img src="./css/images/Bitmap.jpg">
+			<img src="../css/images/Bitmap.jpg">
 			<ul>
 				<li>Стоимость: 2 700 руб.</li>
 				<li class="firm">S-tep / <span class="shoes">Ботинки</span></li>
 			</ul>
 		</div>
-	
+
 		<div class="product">
-			<img src="./css/images/Bitmap.jpg">
+			<img src="../css/images/Bitmap.jpg">
 			<ul>
 				<li><strike>4 300 руб.</strike>
 					<span id="action">3 500 руб.</span></li>
@@ -103,24 +101,29 @@ require_once "php/main.php";
 			</div>
 		</div>
 
-		<div id="modal4" class="modal_div" style="display: none;">  
+		<div id="modal4" class="modal_div" style="display: none;">
 			<span class="modal_close">X</span>
-			<img src="./css/images/Bitmap.jpg">
+			<img src="../css/images/Bitmap.jpg">
 			<ul>
                 <li><strike>4 300 руб.</strike>
                     <span id="action">3 500 руб.</span></li>
 				<li class="firm">Стиль Modern / <span class="shoes">Туфли</span></li>
 			</ul>
 		</div>
-	
+
 		<div id="overlay"></div>
 
 	</div>
 </div>
 
-<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="./js/jquery.fancybox.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="./node_modules/sass.js/dist/sass.js"></script>
+<!-- inject:js -->
+<script src="/build/js/script-31f1ee0826.js"></script>
+<!-- endinject -->
+
+<!--<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>-->
+<!--<script type="text/javascript" src="../js/jquery.fancybox.min.js"></script>-->
+<!--<script type="text/javascript" src="../js/script.js"></script>-->
+
+<script type="text/javascript" src="../node_modules/sass.js/dist/sass.js"></script>
 </body>
 </html>

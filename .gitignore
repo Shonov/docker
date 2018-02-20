@@ -1,4 +1,8 @@
-node_modules
 .idea
 .idea/*
-node_modules/*
+
+frontend/build
+frontend/build/*
+
+frontend/node_modules
+frontend/node_modules/*

@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
 
   nginx:
@@ -29,13 +29,13 @@ services:
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
-    links:
-      - db
     ports:
       - 8080:80
 
   frontend:
-    build: ./
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
     volumes:
-      - ./:/usr/share/frontend
+      - ./frontend:/usr/share/nginx/html/frontend

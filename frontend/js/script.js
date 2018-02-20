@@ -31,20 +31,23 @@ $(document).ready(() => {
             // console.log(result.text);
             $('<style></style>').insertAfter($('head')).html(result.text);
 
-            // $.ajax({
-            //     'url': 'main.php',
-            //     'type': 'post',
-            //     'data': result.text,
-            //     success: (data) => {
-            //         console.log(data);
-            //     },
-            //     error:  (data) => {
-            //         console.log(data);
-            //     }
-            //
-            // });
+            let css = $('style').html();
+
+            $.ajax({
+                url: '../../php/main.php',
+                type: 'post',
+                data: css,
+                success: (data) => {
+                    console.log(data);
+                },
+                error:  (data) => {
+                    console.log(data);
+                }
+            });
+
 
         });
+
     });
 
 });

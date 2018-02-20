@@ -2,9 +2,14 @@ $color_value: #586667;
 $size_text: 20px;
 $small_size_text: 14px;
 $type_text: ArialMT;
+
+html{
+  margin-top: 20px;
+}
+
 #main {
   width:1140px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 #title  {
@@ -108,7 +113,6 @@ $type_text: ArialMT;
 }
 
 #shadow {
-  position: fixed;
   z-index: 10;
   opacity: 0.8;
   border-bottom: 500px solid #fff;
