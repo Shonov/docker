@@ -3,5 +3,4 @@ FROM node
 RUN mkdir /usr/share/frontend
 WORKDIR /usr/share/frontend
 
-
-#CMD ["npm","start"]
+RUN npm install -g gulp

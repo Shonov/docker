@@ -1,6 +1,8 @@
 let gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    pump = require('pump'),
     cssmin = require('gulp-cssmin'),
     jsmin = require('gulp-jsmin'),
     gutil = require('gulp-util'),
@@ -16,7 +18,7 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('./css'));
 });
 
-gulp.task('sass:watch', () => {
+gulp.task('watch', () => {
     gulp.watch('./sass/**/*.scss', ['sass']);
     gulp.watch('./js/**/*.js', ['build-js']);
     gulp.watch('./css/**/*.css', ['build-css']);
@@ -25,28 +27,28 @@ gulp.task('sass:watch', () => {
 
 
 gulp.task('build-js', function () {
-    return gulp.src('./js/*.js')
-        .pipe(concat('script.js'))
-        .pipe(jsmin())
-        .pipe(rev())
-        .pipe(gulp.dest('./build/js'))
+    return pump([gulp.src(['./node_modules/jquery/dist/*.js', './node_modules/fancybox/dist/js/*.js', '!./node_modules/jquery/dist/*.min.js']),
+        concat('script.js'),
+        uglify(),
+        rev(),
+        gulp.dest('./build/js')]);
 });
 
 gulp.task('build-css', function () {
-    return gulp.src('./css/*.css')
-        .pipe(concat('style.css'))
-        .pipe(cssmin())
-        .pipe(rev())
-        .pipe(gulp.dest('./build/css'))
+    return pump([gulp.src('./css/*.css'),
+        concat('style.css'),
+        cssmin(),
+        rev(),
+        gulp.dest('./build/css')]);
 });
 
 
 gulp.task('default', ['build-css', 'build-js'], () => {
-    let target = gulp.src('./index.php');
+    let target = gulp.src('./index.html');
     let sources = gulp.src(['./build/js/*.js', './build/css/*.css' ], {read: false});
 
     return target.pipe(inject(sources))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./build/.'));
 });
 
 gulp.task('build', ['watch']);

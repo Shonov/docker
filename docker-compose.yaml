@@ -30,7 +30,7 @@ services:
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
-      - 8080:80
+      - 8080:8080
 
   frontend:
     build:
@@ -38,4 +38,4 @@ services:
       dockerfile: Dockerfile
     container_name: frontend
     volumes:
-      - ./frontend:/usr/share/nginx/html/frontend
+      - ./:/usr/share/nginx/html
